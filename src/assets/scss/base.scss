@@ -1,0 +1,11 @@
+@import './variables.scss';
+
+.button-red {
+  color: white;
+  background-color: #f22539;
+  font-weight: 700;
+  font-size: 18px;
+  &:hover {
+    background-color: #c00e20;
+  }
+}
