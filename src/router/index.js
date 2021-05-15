@@ -8,6 +8,10 @@ const routerOptions = [
     path: "/",
     name: "Home",
   },
+  {
+    path: "/pokelist",
+    name: "PokemonList",
+  },
 ];
 
 const routes = routerOptions.map((route) => {

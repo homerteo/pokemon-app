@@ -3,6 +3,11 @@
 <script>
 export default {
   name: "Home",
+  methods: {
+    redirectTo() {
+      this.$router.push({ path: "/pokelist" });
+    },
+  },
 };
 </script>
 
