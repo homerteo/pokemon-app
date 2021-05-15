@@ -1,12 +1,30 @@
 @import './variables.scss';
 
-.button-red {
-  color: white;
-  background-color: #f22539;
+@mixin button-base {
   font-weight: 700;
   font-size: 18px;
+  color: white;
+  min-width: 150px;
+}
+
+.button-red {
+  @include button-base;
+  background-color: $red-primary;
+  border: solid $red-primary 1px;
   &:hover {
-    background-color: #c00e20;
+    color: white;
+    background-color: $red-secondary;
+    border: solid $red-secondary 1px;
+  }
+}
+
+.button-grey {
+  @include button-base;
+  background-color: $grey-primary;
+  border: solid $grey-primary 1px;
+  &:hover {
+    background-color: $black-primary;
+    border: solid $black-primary 1px;
     color: white;
   }
 }

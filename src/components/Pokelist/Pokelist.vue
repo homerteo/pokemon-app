@@ -1,9 +1,9 @@
-<template src="./Pokelist.html"></template>
+<template src="./PokeList.html"></template>
 
 <script>
 export default {
-  name: "Pokelist",
+  name: "PokeList",
 };
 </script>
 
-<style lang="scss" scoped src="./Pokelist.scss"></style>
+<style lang="scss" scoped src="./PokeList.scss"></style>
