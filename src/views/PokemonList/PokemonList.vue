@@ -4,6 +4,7 @@
 import pokemonService from "@/services/Pokemon";
 import NoDataInPokelist from "@/components/NoDataInPokelist/NoDataInPokelist";
 import PokeList from "@/components/PokeList/PokeList";
+import PokeCard from "@/components/PokeCard/PokeCard";
 
 export default {
   name: "PokemonList",
@@ -12,13 +13,25 @@ export default {
       pokemonData: [],
       pokemonsToShow: [],
       serachPokeword: "",
+      openModal: false,
+      pokecardName: "",
     };
   },
-  components: { NoDataInPokelist, PokeList },
+  components: { NoDataInPokelist, PokeList, PokeCard },
   async beforeCreate() {
     const data = await pokemonService.getPokemonList();
     this.pokemonData = data.data.results;
     this.pokemonsToShow = data.data.results;
+  },
+  methods: {
+    openPokeModal(name) {
+      this.openModal = true;
+      this.pokecardName = name;
+    },
+    closeModal() {
+      this.openModal = false;
+      this.pokecardName = "";
+    },
   },
   watch: {
     serachPokeword: function (val) {

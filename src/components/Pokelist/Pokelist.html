@@ -2,13 +2,13 @@
   <section class="section pokelist-list">
     <ul v-for="item in list">
       <li :key="item.name">
-        <div class="box pokelist-list__item is-flex is-justify-content-space-between mb-1">
+        <div class="box pokelist-list__item is-flex is-justify-content-space-between mb-1" @click="$emit('openPokeModal', item.name)">
           {{ item.name }}
         </div>
       </li>
     </ul>
   </section>
-  <footer class="is-flex is-justify-content-center">
+  <footer class="is-flex is-justify-content-center mt-4">
     <button class="button is-rounded button-red mr-1">All</button>
     <button class="button is-rounded button-grey ml-1">Favorites</button>
   </footer>

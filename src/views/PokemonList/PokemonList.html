@@ -11,5 +11,6 @@
     </span>
   </header>
   <no-data-in-pokelist v-if="pokemonsToShow.length === 0" />
-  <poke-list v-else :list="pokemonsToShow" />
+  <poke-list v-else :list="pokemonsToShow" @openPokeModal="openPokeModal" />
+  <poke-card :openModal="openModal" :pokecardName="pokecardName" @closeModal="closeModal" />
 </div>
