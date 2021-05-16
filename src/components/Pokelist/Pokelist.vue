@@ -3,6 +3,9 @@
 <script>
 export default {
   name: "PokeList",
+  props: {
+    list: { type: Array },
+  },
 };
 </script>
 

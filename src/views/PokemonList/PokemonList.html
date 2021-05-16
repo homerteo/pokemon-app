@@ -1,10 +1,15 @@
 <div class="pokemon-list">
   <header class="pl-4 pr-4">
-    <input type="text" class="input is-normal mt-4" placeholder="Search">
+    <input
+      type="text"
+      class="input is-normal mt-4"
+      placeholder="Search"
+      v-model="serachPokeword"
+    >
     <span class="icon is-small is-left">
       <i class="fas fa-search"></i>
     </span>
   </header>
-  <no-data-in-pokelist v-if="false" />
-  <poke-list />
+  <no-data-in-pokelist v-if="pokemonsToShow.length === 0" />
+  <poke-list :list="pokemonsToShow" />
 </div>
