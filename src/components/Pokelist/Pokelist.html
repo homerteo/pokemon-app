@@ -1,4 +1,13 @@
 <div class="pokelist">
+  <section class="section pokelist-list">
+    <ul v-for="item in list">
+      <li :key="item.name">
+        <div class="box pokelist-list__item is-flex is-justify-content-space-between mb-1">
+          {{ item.name }}
+        </div>
+      </li>
+    </ul>
+  </section>
   <footer class="is-flex is-justify-content-center">
     <button class="button is-rounded button-red mr-1">All</button>
     <button class="button is-rounded button-grey ml-1">Favorites</button>

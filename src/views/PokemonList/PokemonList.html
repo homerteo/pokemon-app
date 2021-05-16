@@ -11,5 +11,5 @@
     </span>
   </header>
   <no-data-in-pokelist v-if="pokemonsToShow.length === 0" />
-  <poke-list :list="pokemonsToShow" />
+  <poke-list v-else :list="pokemonsToShow" />
 </div>

@@ -1,2 +1,12 @@
 .pokelist {
+  &-list {
+    height: 80vh;
+    overflow: auto;
+    cursor: pointer;
+    &__item {
+      &:hover {
+        background-color: whitesmoke;
+      }
+    }
+  }
 }
