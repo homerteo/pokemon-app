@@ -8,7 +8,9 @@ export default {
   name: "PokeCard",
   data() {
     return {
-      pokemonData: null,
+      pokemonData: {
+        types: [],
+      },
     };
   },
   props: {
@@ -17,9 +19,12 @@ export default {
   },
   filters: { arrayToString },
   async beforeUpdate() {
-    console.log("beforeUpdate", this.pokecardName);
     const data = await pokemonService.getPokemonList(this.pokecardName);
-    this.pokemonData = data.data;
+    if (data.data) {
+      this.pokemonData = data.data;
+    } else {
+      this.pokemonData = { types: [] };
+    }
   },
   methods: {
     onCancel() {
