@@ -1,3 +1,5 @@
+@import './../../assets/scss/variables.scss';
+
 .pokelist {
   &-list {
     height: 80vh;
@@ -9,6 +11,24 @@
       &:hover {
         background-color: whitesmoke;
       }
+    }
+  }
+  &-start-container {
+    background-color: $white-dark;
+    padding: 3px;
+    margin: 0;
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    z-index: 3;
+    &:hover {
+      background-color: $grey-tertiary;
+    }
+    .fas--inactive {
+      color: $grey-secondary;
+    }
+    .fas--active {
+      color: $yellow-primary;
     }
   }
 }

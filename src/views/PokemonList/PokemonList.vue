@@ -15,6 +15,7 @@ export default {
       serachPokeword: "",
       openModal: false,
       pokecardName: "",
+      loading: false,
     };
   },
   components: { NoDataInPokelist, PokeList, PokeCard },
@@ -22,6 +23,10 @@ export default {
     const data = await pokemonService.getPokemonList();
     this.pokemonData = data.data.results;
     this.pokemonsToShow = data.data.results;
+  },
+  created() {
+    this.loading = true;
+    setTimeout(() => (this.loading = false), 5000);
   },
   methods: {
     openPokeModal(name) {

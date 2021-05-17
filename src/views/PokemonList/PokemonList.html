@@ -1,16 +1,25 @@
 <div class="pokemon-list">
-  <header class="pl-4 pr-4">
-    <input
-      type="text"
-      class="input is-normal mt-4"
-      placeholder="Search"
-      v-model="serachPokeword"
-    >
-    <span class="icon is-small is-left">
-      <i class="fas fa-search"></i>
-    </span>
+  <header class="pr-4 pl-4 pb-4 pokemon-list-search">
+    <p class="control has-icons-left">
+      <input
+        type="text"
+        class="input is-normal mt-4"
+        placeholder="Search"
+        v-model="serachPokeword"
+      >
+      <span class="icon is-small is-left pt-5">
+        <i class="fas fa-search"></i>
+      </span>
+    </p>
   </header>
   <no-data-in-pokelist v-if="pokemonsToShow.length === 0" />
   <poke-list v-else :list="pokemonsToShow" @openPokeModal="openPokeModal" />
   <poke-card :openModal="openModal" :pokecardName="pokecardName" @closeModal="closeModal" />
+  <div class="pokemon-list-loading">
+    <b-loading :is-full-page="true" v-model="loading" :can-cancel="false">
+      <figure>
+        <img src="./../../assets/img/Loader.png" alt="Pokebola loading" class="pokemon-list-loading__image">
+      </figure>
+    </b-loading>
+  </div>
 </div>

@@ -1,0 +1,7 @@
+@import './../../assets/scss/variables.scss';
+
+.pokemon-list {
+  .icon i {
+    color: $grey-secondary !important;
+  }
+}
