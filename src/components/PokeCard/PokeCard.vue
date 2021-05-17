@@ -1,6 +1,7 @@
 <template src="./PokeCard.html"></template>
 
 <script>
+import { mapGetters } from "vuex";
 import pokemonService from "@/services/Pokemon";
 import arrayToString from "@/filters/arrayToString.js";
 
@@ -11,6 +12,7 @@ export default {
       pokemonData: {
         types: [],
       },
+      favorites: [],
     };
   },
   props: {
@@ -29,6 +31,34 @@ export default {
   methods: {
     onCancel() {
       this.$emit("closeModal");
+    },
+    copyToClipboard(name) {
+      const copyElement = document.createElement("input");
+      copyElement.className = "copyElement";
+      document.body.appendChild(copyElement);
+      copyElement.value = name;
+      copyElement.select();
+      document.execCommand("copy");
+      document.body.removeChild(copyElement);
+      this.$buefy.toast.open({
+        duration: 5000,
+        position: "is-top",
+        message: `${name} was shared successfully `,
+        type: "is-success",
+      });
+    },
+  },
+  computed: {
+    ...mapGetters({
+      favoritesList: "getFavorites",
+    }),
+    isFavorite() {
+      return this.favorites.some((f) => f.name === this.pokemonData.name);
+    },
+  },
+  watch: {
+    favoritesList: function (value) {
+      this.favorites = value;
     },
   },
 };

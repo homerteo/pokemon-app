@@ -12,7 +12,7 @@
       </span>
     </p>
   </header>
-  <no-data-in-pokelist v-if="pokemonsToShow.length === 0" />
+  <no-data-in-pokelist v-if="pokemonsToShow.length === 0 && !loading" />
   <poke-list v-else-if="!favoriteView" :list="pokemonsToShow" @openPokeModal="openPokeModal" @showFavorites="showFavorites" @showAll="showAll" />
   <poke-list v-else :list="favoritesToShow" @openPokeModal="openPokeModal" @showFavorites="showFavorites" @showAll="showAll" />
   <poke-card :openModal="openModal" :pokecardName="pokecardName" @closeModal="closeModal" />

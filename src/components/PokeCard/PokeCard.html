@@ -23,7 +23,7 @@
       <div class="card-content">
         <div class="content">
           <div class="content__text--underline mb-4">
-            <p><strong>Name: </strong> {{ pokemonData.name }} </p>
+            <p id="pokeName"><strong>Name: </strong> {{ pokemonData.name }} </p>
           </div>
           <div class="content__text--underline mb-4">
             <p><strong>Weigth: </strong>{{ pokemonData.weight }}</p>
@@ -36,8 +36,12 @@
           </div>
         </div>
       </div>
-      <footer class="card-footer p-4">
-        <button class="button is-rounded button-red">Share to my friends</button>
+      <footer class="card-footer p-4 is-flex is-justify-content-space-between is-align-items-center">
+        <button class="button is-rounded button-red" @click="copyToClipboard(pokemonData.name)" >Share to my friends</button>
+        <span class="icon is-large is-left mr-3">
+          <i v-if="isFavorite" class="fas fa-star fas--active"></i>
+          <i v-else class="fas fa-star fas--inactive"></i>
+        </span>
       </footer>
     </div>
   </b-modal>

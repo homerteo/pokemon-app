@@ -28,3 +28,11 @@
     color: white;
   }
 }
+
+.fas--inactive {
+  color: $grey-secondary;
+}
+
+.fas--active {
+  color: $yellow-primary;
+}
