@@ -17,7 +17,7 @@ const routerOptions = [
 const routes = routerOptions.map((route) => {
   return {
     ...route,
-    component: () => import(`@/views/${route.name}/${route.name}`),
+    component: () => import(`./../views/${route.name}/${route.name}`),
   };
 });
 

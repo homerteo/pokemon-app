@@ -2,8 +2,8 @@
 
 <script>
 import { mapGetters } from "vuex";
-import pokemonService from "@/services/Pokemon";
-import arrayToString from "@/filters/arrayToString.js";
+import pokemonService from "./../../services/Pokemon";
+import arrayToString from "./../../filters/arrayToString";
 
 export default {
   name: "PokeCard",

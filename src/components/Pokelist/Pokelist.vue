@@ -1,4 +1,4 @@
-<template src="./PokeList.html"></template>
+<template src="./Pokelist.html"></template>
 
 <script>
 import { mapActions, mapGetters } from "vuex";
@@ -34,4 +34,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped src="./PokeList.scss"></style>
+<style lang="scss" scoped src="./Pokelist.scss"></style>

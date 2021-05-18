@@ -2,10 +2,10 @@
 
 <script>
 import { mapGetters } from "vuex";
-import pokemonService from "@/services/Pokemon";
-import NoDataInPokelist from "@/components/NoDataInPokelist/NoDataInPokelist";
-import PokeList from "@/components/PokeList/PokeList";
-import PokeCard from "@/components/PokeCard/PokeCard";
+import pokemonService from "./../../services/Pokemon";
+import NoDataInPokelist from "./../../components/NoDataInPokelist/NoDataInPokelist";
+import PokeList from "./../../components/Pokelist/Pokelist";
+import PokeCard from "./../../components/PokeCard/PokeCard";
 
 export default {
   name: "PokemonList",
